@@ -22,7 +22,10 @@ Otherwise *.p12 will be unsigned/unverifyed.
 
 ## references
 
+### EN
+
 * https://raymii.org/s/tutorials/IPSEC_vpn_with_CentOS_7.html
+* https://www.vultr.com/docs/using-strongswan-for-ipsec-vpn-on-centos-7
 
 ### RU
 

@@ -1,0 +1,75 @@
+#######################################################################################
+##  Project    : Collect of various dotfiles from my system (settings and config)
+##  Designer   : Dmitry Murzinov (kakstattakim@gmail.com)
+##  Link       : https://github.com/iDoka/dotfiles/blob/master/.editorconfig
+##  Description: This file is for unifying the coding style for various editors/IDEs
+##  Usage      : use EditorConfig plugin for your favourite editor/IDE
+##  Revision   : $Rev
+##  Date       : $LastChangedDate$
+##  License    : MIT
+#######################################################################################
+
+
+# top-most EditorConfig file
+root = true
+
+# Default: Unix-style newlines with a newline ending every file
+[*]
+charset = utf-8
+end_of_line = lf
+trim_trailing_whitespace = true
+insert_final_newline = true
+max_line_length = 120
+
+
+# Tab indentation (no size specified)
+[{Makefile, *.mk, *.make, *.makefile}]
+indent_style = tab
+
+# 2 space indentation for Verilog, SystemVerilog and VHDL code
+[*.{sv, svh, svp, v, vh, vp, vhd, vhdl}]
+indent_style = space
+indent_size = 2
+
+# C, C++
+[*.{c, h, cpp, hpp}]
+indent_style = space
+indent_size = 2
+
+# Shell
+[*.{sh, bash}]
+indent_style = space
+indent_size = 4
+
+# TCL, Vivado
+[*.{tcl, xdc, sdc}]
+indent_style = space
+indent_size = 2
+
+# 4 space indentation
+[*.py]
+indent_style = space
+indent_size = 4
+
+
+[*.yml]
+indent_style = space
+indent_size = 2
+
+# Markdown
+[*.md]
+trim_trailing_whitespace = false
+
+# README
+[README.md]
+max_line_length = 0
+indent_size = 2
+
+#[LICENSE]
+#max_line_length = 80
+
+# Matches the exact files either package.json or .travis.yml
+#[{package.json,.travis.yml}]
+#indent_style = space
+#indent_size = 2
+

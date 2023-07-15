@@ -1,0 +1,14 @@
+# http://playground.arduino.cc/Linux/Udev
+
+SUBSYSTEMS=="usb", ATTRS{product}=="FT232R USB UART", ATTRS{idProduct}=="6001", ATTRS{idVendor}=="0403", SYMLINK+="arduino arduino_$attr{serial}", MODE="0666"
+SUBSYSTEMS=="usb", ATTRS{product}=="ARDUINO NANO",    ATTRS{idProduct}=="6001", ATTRS{idVendor}=="0403", SYMLINK+="arduino arduino_nano_$attr{serial}", MODE="0666"
+SUBSYSTEMS=="usb", ATTRS{idProduct}=="6001", ATTRS{idVendor}=="0403", SYMLINK+="FT232R_%n", MODE="0666"
+
+#Arduino UNO
+SUBSYSTEMS=="usb", ATTRS{idProduct}=="0043", ATTRS{idVendor}=="2341", SYMLINK+="arduino arduino_uno_$attr{serial}", MODE="0666"
+
+# CP2102 10c4:ea60
+SUBSYSTEMS=="usb", ATTRS{idProduct}=="ea60", ATTRS{idVendor}=="10c4", SYMLINK+="cp2102_%n", MODE="0666", GROUP="plugdev"
+
+
+

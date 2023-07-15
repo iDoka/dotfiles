@@ -1,0 +1,12 @@
+ACTION=="add", ATTR{idVendor}=="33aa",ATTR{idProduct}=="0120", MODE:="666"
+
+# Remove ftdi_sio driver for USB devices with a certain vendor and product ID
+ATTRS{idVendor}=="0403",ATTR{idProduct}=="6014", MODE:="666",PROGRAM="/bin/sh -c 'echo -n $id:1.1 > /sys/bus/usb/drivers/ftdi_sio/unbind'"
+ATTRS{idVendor}=="0403",ATTR{idProduct}=="6014", MODE:="666",PROGRAM="/bin/sh -c 'echo -n $id:1.0 > /sys/bus/usb/drivers/ftdi_sio/unbind'"
+ATTRS{idVendor}=="0403",ATTR{idProduct}=="6014", MODE:="666", RUN+="/bin/bash -c 'nohup udevadm trigger --attr-match=idVendor=0403 --attr-match=idProduct=6014;modprobe -r ftdi_sio;'"
+
+
+
+
+
+

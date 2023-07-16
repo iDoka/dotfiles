@@ -1,0 +1,27 @@
+#####################################
+# dpkg -l | wc -l
+### UBUNTU substitute: yum -> apt ###
+alias syi='sudo apt install'
+alias syu='sudo apt --only-upgrade install'
+alias syr='sudo apt purge'
+alias sys='sudo apt search'
+alias syf='sudo apt show'
+
+alias deb='sudo apt install'
+
+alias deb_install='sudo dpkg -i'
+
+### APT hint:
+# apt list --installed
+# apt list --upgradeable
+
+#####################################
+# rpm -qa | wc -l
+### RPM-based: ###
+#alias syi='sudo yum install'
+#alias syu='sudo yum update'
+#alias syr='sudo yum remove'
+#alias sys='sudo yum search'
+#alias syf='sudo yum info'
+
+

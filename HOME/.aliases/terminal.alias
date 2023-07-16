@@ -1,0 +1,43 @@
+## Tmux
+alias tm='tmux attach || tmux new'
+
+## Screen
+alias sx='screen -x ddd'
+
+# Add an "alert" alias for long running commands.  Use like so:
+#   sleep 10; alert
+alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
+
+
+
+
+
+################## TITLE for Window ##################
+
+alias t='echo -n -e "\033]0;$(basename ${PWD})\007"'
+#alias t='xttitle "${HOSTNAME}:$(basename ${PWD})"'
+
+
+#1
+termtitle() { printf "\033]0;$*\007"; }
+
+#2
+title() { printf "\033]0;$*\007"; }
+
+#3 Works on Ubuntu 16.04 to 20.04
+function title3() {
+    # Set terminal tab title. Usage: title "new tab name"
+    prefix=${PS1%%\\a*}                  # Everything before: \a
+    search=${prefix##*;}                 # Eeverything after: ;
+    esearch="${search//\\/\\\\}"         # Change \ to \\ in old title
+    PS1="${PS1/$esearch/$@}"             # Search and replace old with new
+}
+
+#4 https://askubuntu.com/questions/380315/command-to-open-new-tab-in-the-current-terminal
+title4() {
+  if [ -d ${PWD}/$1 ]; then
+    gnome-terminal --tab --working-directory=${PWD}/$1
+  else      
+    gnome-terminal --tab --working-directory=$1
+  fi
+}

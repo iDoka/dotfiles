@@ -1,0 +1,20 @@
+## tty
+alias devtty='ls -l /dev/tty[AU]*'
+alias lstty='ls -l /dev/tty[AU]*'
+
+
+alias msgusb='sudo tail -f /var/log/messages | grep -v journal | grep -i usb'
+
+### STM32
+export STM32CUBE_PATH=/opt/STM32CubeF1-1.8.4
+# -------------
+export STM32F0CUBE_PATH=/opt/STM32CubeF0-1.11.2
+export STM32F1CUBE_PATH=/opt/STM32CubeF1-1.8.4
+
+
+### ESP32
+alias get_idf='. /opt/esp-idf/export.sh'
+
+
+
+

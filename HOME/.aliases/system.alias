@@ -1,0 +1,46 @@
+## system
+
+## systemctl
+alias sst='sudo systemctl start'
+alias ssp='sudo systemctl stop'
+alias ssr='sudo systemctl restart'
+alias ssl='sudo systemctl reload'
+alias sse='sudo systemctl enable --now'
+alias ssd='sudo systemctl disable --now'
+alias sss='sudo systemctl status'
+
+
+
+# Setup the Dmesg command so that the kernel log messages have human-readable timestamps by default
+alias dmesg='dmesg --ctime --color'
+
+alias msg='sudo tail -f /var/log/syslog'
+
+alias battery="upower -i $(upower -e | grep BAT) | grep --color=never -E \"state|to\ full|to\ empty|percentage\""
+
+alias fstab='bat /etc/fstab'
+alias crypttab='bat /etc/crypttab'
+alias mtab='bat /etc/mtab'
+alias logread='tail /var/log/dpkg.log | bat --paging=never -l log'
+
+alias cpuinfo='bat /proc/cpuinfo'
+alias meminfo='bat /proc/meminfo'
+
+## limiting performance by request
+alias freqlo='echo  800000 | sudo tee /sys/devices/system/cpu/cpu*/cpufreq/scaling_max_freq'
+alias freqmi='echo 2000000 | sudo tee /sys/devices/system/cpu/cpu*/cpufreq/scaling_max_freq'
+alias freqhi='echo 4800000 | sudo tee /sys/devices/system/cpu/cpu*/cpufreq/scaling_max_freq'
+alias flo='freqlo'
+alias fmi='freqmi'
+alias fhi='freqhi'
+
+## get cores frequency
+alias freq='grep MHz /proc/cpuinfo | cut -d: -f2 | cut -d. -f1'
+
+alias free="free -mt | head -2"
+
+alias ps="ps auxf"
+alias psg="ps aux | grep -v grep | grep -i -e VSZ -e"
+
+
+

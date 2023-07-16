@@ -1,0 +1,17 @@
+#### for GIT ####
+alias gs="git status"
+alias ga="git add"
+alias gc="git commit -m"
+alias gca="git commit -m -a"
+alias gp="git push"
+alias gu="git pull"
+alias gd="git diff"
+alias go='git checkout'
+alias gb='git branch -v'
+
+
+#alias gl="git log"
+#alias gl='git log --graph --pretty=format:"%t, %ar: %s"'
+alias gl="git log --graph --pretty=format:'%C(yellow)%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=short "
+alias ghist='git log --pretty=format:"%h %ad | %s%d [%an]" --graph --date=short'
+

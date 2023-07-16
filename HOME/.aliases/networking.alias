@@ -1,0 +1,27 @@
+alias myip="curl http://ipecho.net/plain; echo"
+
+alias yt='yt-dlp'
+
+alias ngx='sudo systemctl reload nginx.service'
+
+## listening ports
+alias ports='netstat -tulanp'
+
+## Wireguard
+alias vpnup='sudo wg-quick up   wg0-client'
+alias vpndown='sudo wg-quick down wg0-client'
+
+# SSH with X11 forwarding enabled (GUI windows opened on the remote server display locally)
+alias ssh-x='ssh -X'
+
+# Setup the secure copy command to preserve file metadata and recursively copy data
+alias scp='scp -p -r'
+
+# Fetches all the files under a given directory on a website with the web get command.
+alias wget-dir='wget --recursive i--no-host-directories --no-directories --no-parent --execute robots=off'
+
+# Downloads a file in parallel from a website using the maximum possible number of connections and threads.
+MAX_DOWNLOAD_CONNECTIONS=16
+alias parallel-download="aria2c --max-connection-per-server=${MAX_DOWNLOAD_CONNECTIONS} --split=${MAX_DOWNLOAD_CONNECTIONS}"
+
+

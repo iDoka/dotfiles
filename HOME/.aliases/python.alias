@@ -1,0 +1,15 @@
+## python virtual environment aliases
+alias ve='python3 -m venv ./venv'
+alias va='source ./venv/bin/activate'
+alias vd='deactivate'
+
+## 
+alias pipi='pip3 install'
+alias pipu='pip3 install --upgrade'
+alias pipr='pip3 uninstall'
+
+# short pylint report
+alias pylint="pylint -rn"
+#alias pylint="pylint -rn --output-format=colorized"
+alias pylintall="pylint -rn *.py | grep -v 'Locally ' "
+

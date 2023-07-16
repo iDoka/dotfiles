@@ -1,0 +1,10 @@
+## Docker
+## run container in privileged mode
+alias dockrun='sudo docker run -i -t --privileged $@'
+
+## stop container
+alias dockstop='sudo docker stop $(docker ps -a -q)'
+
+## remove container
+alias dockrm='sudo docker rm $(docker ps -a -q)'
+

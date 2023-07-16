@@ -1,0 +1,74 @@
+## reload bash settings
+alias bashrc="source ~/.bashrc"
+
+
+## History
+alias h="history | tail -30"
+alias hg='history | grep'
+alias histgrp="history | grep"
+
+## Joe editor
+alias joe='joe --wordwrap'
+alias sj='sudo joe --wordwrap'
+
+alias b='bat'
+
+alias pp='ps aux | grep'
+
+alias fhere="find . -name "
+
+alias grep='grep --color'
+
+#alias which='alias | /usr/bin/which --tty-only --read-alias --show-dot --show-tilde'
+
+alias win2utf='iconv --from-code=WINDOWS-1251 --to-code=UTF-8'
+alias wtu='win2utf'
+
+
+# Setup the dd command to show progress of the data movement by default
+alias dd='dd status=progress'
+
+## unarchive
+alias tj='tar xjf'
+alias tz='tar xzf'
+alias TAR='tar -zcvf' # dest source
+alias UNTAR='tar -zxvf' # source
+
+alias bones='grep -vE "^#|^$"'
+
+alias cal='cal -m3'
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

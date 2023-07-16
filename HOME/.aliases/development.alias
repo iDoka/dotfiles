@@ -1,0 +1,33 @@
+## colorize sources
+## ################
+## sudo apt install python-pygments
+## sudo pip install pygments
+#alias ccat='pygmentize -g -O style=colorful,linenos=1'
+alias ccat='pygmentize -g'
+
+## sudo apt install highlight
+## sudo yum install highlight
+alias cats='highlight -O ansi --force'
+
+
+# colored GCC warnings and errors
+#export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
+
+
+# Aliases for GCC and G++ to both compile code with strict warnings and with all debug flags enabled.
+GCC_SAFE_FLAGS='-Wall -Werror -Wextra -std=gnu99'
+GCC_DEBUG_FLAGS="${GCC_SAFE_FLAGS} -g -ggdb -O0"
+
+alias gcc-safe="gcc ${GCC_SAFE_FLAGS}"
+alias gcc-debug="gcc ${GCC_DEBUG_FLAGS}"
+alias g++-safe="g++ ${GCC_SAFE_FLAGS}"
+alias g++-debug="g++ ${GCC_DEBUG_FLAGS}"
+
+# A version of the Valgrind command that uses all of the relevant checks for debugging C/C++ code.
+alias valgrind-debug='valgrind --track-origins=yes --track-fds=yes --leak-check=full'
+
+
+# Aliases for running Makefiles to cross-compile C/C++ code for ARM and Android.
+alias make-arm='make ARCH=arm CROSS_COMPILE=arm-linux-gnueabihf-'
+alias make-aarch64='make ARCH=arm64 CROSS_COMPILE=aarch64-linux-gnu-'
+alias make-android='make ARCH=arm CROSS_COMPILE=arm-linux-androideabi-'

@@ -1,6 +1,8 @@
 alias myip="curl http://ipecho.net/plain; echo"
 
-alias yt='yt-dlp'
+alias yt='yt-dlp -f 22'
+alias ytv='yt-dlp -f 22'  # youtube video
+alias yta='yt-dlp -f 140' # youtube audio
 
 alias ngx='sudo systemctl reload nginx.service'
 

@@ -1,12 +1,14 @@
 alias myip="curl http://ipecho.net/plain; echo"
 
-alias yt='yt-dlp -f 22'   # youtube video [default]
+alias yt='yt-dlp -F'   # get options to media download
+alias ytd='yt-dlp -f 22'   # youtube video [default]
+alias ytt='yt-dlp -f 22'   # youtube video [default]
 alias ytv='yt-dlp -f 22'  # youtube video [default]
 alias yta='yt-dlp -f 140' # youtube audio [HQ]
 alias ytw='yt-dlp -F'     # which formats are supported? 
 
-alias ytah=yt-dlp -f 140' # youtube audio [HQ]
-alias ytal=yt-dlp -f 139' # youtube audio [LQ]
+alias ytah='yt-dlp -f 140' # youtube audio [HQ]
+alias ytal='yt-dlp -f 139' # youtube audio [LQ]
 
 
 alias ngx='sudo systemctl reload nginx.service'

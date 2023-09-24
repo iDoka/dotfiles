@@ -9,7 +9,7 @@ alias ytw='yt-dlp -F'     # which formats are supported?
 
 alias ytah='yt-dlp -f 140' # youtube audio [HQ]
 alias ytal='yt-dlp -f 139' # youtube audio [LQ]
-
+alias ytal-no-ad='yt-dlp -f 139 --sponsorblock-remove intro,sponsor,selfpromo,preview,outro' # youtube audio [LQ]
 
 alias ngx='sudo systemctl reload nginx.service'
 

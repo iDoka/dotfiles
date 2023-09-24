@@ -51,6 +51,10 @@ done
 export EDITOR=joe
 
 
+### WINE
+export WINEARCH=win32
+export WINEPREFIX=~/.wine32
+
 ## PowerLine
 ## https://github.com/powerline/powerline
 powerline-daemon -q
@@ -65,5 +69,14 @@ source ~/.shell/alacritty.bash
 
 ## BAT colorizer
 source ~/.autocompletion/bat.bash
+
+
+
+
+
+
+
+
+
 
 

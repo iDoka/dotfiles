@@ -1,0 +1,5 @@
+# Setting serial port rules
+## FIXME: replace OWNER attr with appropriate username
+
+KERNEL=="ttyUSB[0-9]*", TAG+="udev-acl", TAG+="uaccess", GROUP="dialout", OWNER="doka"
+KERNEL=="ttyACM[0-9]*", TAG+="udev-acl", TAG+="uaccess", GROUP="dialout", OWNER="doka"

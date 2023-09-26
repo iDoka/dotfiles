@@ -1,0 +1,7 @@
+# http://playground.arduino.cc/Linux/Udev
+
+#SUBSYSTEMS=="usb", ATTRS{product}=="FT232R USB UART", ATTRS{idProduct}=="6001", ATTRS{idVendor}=="0403", SYMLINK+="arduino arduino_$attr{serial}", MODE="0666"
+
+# esp32c3 303a:1001
+SUBSYSTEMS=="usb", ATTRS{idProduct}=="1001", ATTRS{idVendor}=="303a", SYMLINK+="esp32c3_%n", MODE="0666", GROUP="plugdev"
+

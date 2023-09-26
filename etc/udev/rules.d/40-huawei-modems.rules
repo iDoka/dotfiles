@@ -1,0 +1,8 @@
+## E5573
+#SUBSYSTEM=="usb", SYSFS{idProduct}=="1001", SYSFS{idVendor}=="12d1", RUN+="/lib/udev/modem-modeswitch --vendor 0x12d1 --product 0x1001 --type option-zerocd"
+## E173, E1550
+#SUBSYSTEM=="usb", SYSFS{idProduct}=="14db", SYSFS{idVendor}=="12d1", RUN+="/lib/udev/modem-modeswitch --vendor 0x12d1 --product 0x14db --type option-zerocd"
+
+
+ATTRS{idvendor}=="12d1", ATTRS{idProduct}=="1f01", RUN+="/usr/sbin/usb_modeswitch -v 12d1 -p 1f01 -M 55534243123456780000000000000011062000000101000100000000000000"
+

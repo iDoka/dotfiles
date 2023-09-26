@@ -1,0 +1,3 @@
+# Allow unrestricted access to CarlinKit device
+SUBSYSTEMS=="usb", ATTRS{idVendor}=="1314", ATTRS{idProduct}=="1520", SYMLINK+="carlinkit%n", MODE:="0666"
+

@@ -1,0 +1,8 @@
+SUBSYSTEMS=="usb", ATTRS{idVendor}=="04d8", ATTRS{idProduct}=="00dd", \
+    MODE:="0666", \
+    SYMLINK+="MCP2221-%n"
+
+##### please reload udev rules:
+# sudo udevadm control --reload-rules
+
+

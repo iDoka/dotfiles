@@ -3,12 +3,12 @@ alias myip="curl http://ipecho.net/plain; echo"
 
 ###########################################
 ## Yt-Dlp format detect
-alias yt='yt-dlp -F'   # get options to media download
-alias ytw='yt-dlp -F'     # which formats are supported? 
+alias yt='yt-dlp -F'   # get options to media download: which formats are supported?
+alias ytw='yt'
 
 ###########################################
-## full (with advertisement and sponsor block)
-alias ytd-full='yt-dlp -f  22' # youtube video [default]
+## full media (with advertisement and sponsor block)
+alias ytd-full='yt-dlp -f 22' # youtube video [default]
 alias ytv-full='ytd-full'
 ## ------------------
 alias ytah-full='yt-dlp -f 140' # youtube audio [HQ]
@@ -33,7 +33,7 @@ alias ports='netstat -tulanp'
 
 ###########################################
 ## Wireguard
-alias vpnup='sudo wg-quick up   wg0-client'
+alias vpnup='sudo wg-quick up wg0-client'
 alias vpndown='sudo wg-quick down wg0-client'
 
 # SSH with X11 forwarding enabled (GUI windows opened on the remote server display locally)

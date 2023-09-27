@@ -1,0 +1,52 @@
+########### VLSI ###########
+
+
+### ModelSim/QuestaSim
+alias vlog='vlog -64'
+alias vsim='vsim -64'
+
+
+### Synopsys
+alias vcs='vcs -full64'
+alias verdi='verdi -full64 &'
+
+
+### light syntax check with ICARUS VERILOG LINT
+# FIXME!
+#check-iverilog() { iverilog -g2005-sv -s $(basename $(basename $1 .v) .sv) -o /dev/null }
+# for Verilog-2001
+alias check-icarus='iverilog -g2001 -Wall -Wno-sensitivity-entire-vector -Wno-sensitivity-entire-array -y . -o /dev/null'
+# for SystemVerilog
+alias check-icarus-sv='iverilog -g2005-sv -Wall -Wno-sensitivity-entire-vector -Wno-sensitivity-entire-array -y . -o /dev/null'
+
+
+### VERILATOR LINT
+alias lint-verilator='verilator --lint-only -Wall +1364-2001ext+v -y . '
+
+
+### VERIBLE LINT
+alias lint-verible='verible-verilog-lint --ruleset all --rules=-explicit-parameter-storage-type,-port-name-suffix'
+
+
+### simple syntax check with CVC
+alias cvc-check='cvc64 -q -l /dev/null -o /dev/null'
+alias cvc-check-sv='cvc64 -q -sv -l /dev/null -o /dev/null'
+
+
+### Xilinx/AMD Vivado
+# example: vivado -nojournal -nolog -mode batch -notrace -source ./script/aes-ku040-load.tcl
+# concerning option -nolog: 
+# [-nolog]      Do not create a log file
+# [-nojournal]  Do not create a journal file
+
+# run interactive shell in GUI mode:
+alias vivado-gui='vivado -nojournal -nolog -mode gui'
+
+# run interactive shell in CLI mode:
+alias vivado-cli='vivado -nojournal -nolog -mode tcl'
+
+# run TCL script in batch mode
+alias vivado-tcl='vivado -nojournal -nolog -mode batch -source '
+alias vivado-run='vivado -nojournal -nolog -mode batch -source '
+
+

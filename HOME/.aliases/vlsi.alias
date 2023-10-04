@@ -34,10 +34,6 @@ alias cvc-check-sv='cvc64 -q -sv -l /dev/null -o /dev/null'
 
 
 ### Xilinx/AMD Vivado
-# example: vivado -nojournal -nolog -mode batch -notrace -source ./script/aes-ku040-load.tcl
-# concerning option -nolog: 
-# [-nolog]      Do not create a log file
-# [-nojournal]  Do not create a journal file
 
 # run interactive shell in GUI mode:
 alias vivado-gui='vivado -nojournal -nolog -mode gui'
@@ -49,4 +45,8 @@ alias vivado-cli='vivado -nojournal -nolog -mode tcl'
 alias vivado-tcl='vivado -nojournal -nolog -mode batch -source '
 alias vivado-run='vivado -nojournal -nolog -mode batch -source '
 
+# example: vivado -nojournal -nolog -mode batch -notrace -source ./script/aes-ku040-load.tcl
+# concerning option -nolog:
+# [-nolog]      Do not create a log file
+# [-nojournal]  Do not create a journal file
 

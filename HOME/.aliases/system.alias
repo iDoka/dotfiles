@@ -37,6 +37,10 @@ alias fhi='freqhi'
 ## get cores frequency
 alias freq='grep MHz /proc/cpuinfo | cut -d: -f2 | cut -d. -f1'
 
+
+# check memory usage in percentage
+alias fmem = "/usr/bin/free | grep Mem | awk '{print $3/$2 * 100.0}' | sed 's/\([0-9]*\).[0-9]*/\1%/g'"
+
 alias free="free -mt | head -2"
 
 alias ps="ps auxf"

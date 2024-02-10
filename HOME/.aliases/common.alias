@@ -42,8 +42,8 @@ alias cal='cal -m3'
 
 
 # get Weather
-alias wez = "curl wttr.in/Zurich"
-alias wem = "curl wttr.in/Moscow"
+alias wez="curl wttr.in/Zurich"
+alias wem="curl wttr.in/Moscow"
 
 
 

@@ -1,4 +1,4 @@
 # print diff with color and two column
-alias dif      = "diff --ignore-trailing-space --ignore-blank-lines --ignore-space-change --strip-trailing-cr --side-by-side --color=always --width=160"
-alias codediff = "diff --ignore-trailing-space --ignore-blank-lines --ignore-space-change --strip-trailing-cr --side-by-side --color=always --width=160"
+alias dif="diff      --ignore-trailing-space --ignore-blank-lines --ignore-space-change --strip-trailing-cr --side-by-side --color=always --width=160"
+alias codediff="diff --ignore-trailing-space --ignore-blank-lines --ignore-space-change --strip-trailing-cr --side-by-side --color=always --width=160"
 

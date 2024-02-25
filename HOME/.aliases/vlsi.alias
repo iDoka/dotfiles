@@ -25,7 +25,7 @@ alias lint-verilator='verilator --lint-only -Wall +1364-2001ext+v -y . '
 
 
 ### VERIBLE LINT
-alias lint-verible='verible-verilog-lint --check_syntax --ruleset all --rules=-explicit-parameter-storage-type,-port-name-suffix,-parameter-name-style,+no-tabs,+line-length=length:120'
+alias lint-verible='verible-verilog-lint --check_syntax --ruleset all --rules=-explicit-parameter-storage-type,-port-name-suffix,-parameter-name-style,+no-tabs,+line-length=length:160'
 
 
 ### simple syntax check with CVC

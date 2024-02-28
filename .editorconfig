@@ -27,7 +27,7 @@ max_line_length = 120
 indent_style = tab
 
 # 2 space indentation for Verilog, SystemVerilog and VHDL code
-[*.{sv, svh, svp, v, vh, vp, vhd, vhdl}]
+[*.{sv, svh, svp, sva, v, vh, vp, vhd, vhdl}]
 indent_style = space
 indent_size = 2
 

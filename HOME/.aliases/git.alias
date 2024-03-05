@@ -1,20 +1,34 @@
 #### for GIT ####
+
+# the most used
 alias gs="git status"
 alias ga="git add"
-# git comit
-alias gc="git commit -m"
-alias gca="git commit -m -a"
-# git commit w/o run pre-commit hooks
-alias gcn="git commit --no-verify -m"
-alias gcnv="git commit --no-verify -m"
 alias gp="git push"
 alias gu="git pull"
 alias gd="git diff"
+#alias gl="git log"
+
+# git commit
+alias gc="git commit -m"
+alias gca="git commit -m -a"
+
+# git commit w/o run pre-commit hooks
+alias gcn="git commit --no-verify -m"
+alias gcnv="git commit --no-verify -m"
+
+# checkout
 alias go='git checkout'
+alias gob='git checkout -b'
+alias gcb='git checkout -b'
+
+# switch
+alias gsw='git switch'
+alias gsm='git switch master'
+
+# others
 alias gb='git branch -v'
 
-# beatifize git log
-#alias gl="git log"
+# beatifize 'git log'
 #alias gl='git log --graph --pretty=format:"%t, %ar: %s"'
 alias gl="git log --graph --pretty=format:'%C(yellow)%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=short "
 alias ghist='git log --pretty=format:"%h %ad | %s%d [%an]" --graph --date=short'

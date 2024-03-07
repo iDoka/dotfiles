@@ -1,0 +1,6 @@
+alias mlist='module list'
+alias mload='module load'
+alias mdisp='module display'
+alias mdisplay='module display'
+alias mrm='module rm'
+

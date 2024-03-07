@@ -30,6 +30,6 @@ alias gb='git branch -v'
 
 # beatifize 'git log'
 #alias gl='git log --graph --pretty=format:"%t, %ar: %s"'
-alias gl="git log --graph --pretty=format:'%C(yellow)%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=short "
+alias gl="git log --graph --pretty=format:'%C(yellow)%h%Creset | %C(green)%ad%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=short "
 alias ghist='git log --pretty=format:"%h %ad | %s%d [%an]" --graph --date=short'
 

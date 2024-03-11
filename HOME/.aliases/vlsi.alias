@@ -27,11 +27,13 @@ alias lint-verilator='verilator --lint-only -Wall +1364-2001ext+v -y . '
 ### VERIBLE LINT
 alias lint-verible='verible-verilog-lint --check_syntax --ruleset all --rules=-explicit-parameter-storage-type,-port-name-suffix,-parameter-name-style,+no-tabs,+line-length=length:160'
 
+## VERIBLE SYNTAX CHECK
+alias vsyntax='verible-verilog-syntax'
+
 
 ### simple syntax check with CVC
 alias cvc-check='cvc64 -q -l /dev/null -o /dev/null'
 alias cvc-check-sv='cvc64 -q -sv -l /dev/null -o /dev/null'
-
 
 ### Xilinx/AMD Vivado
 

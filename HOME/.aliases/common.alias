@@ -31,6 +31,7 @@ alias dd='dd status=progress'
 ## unarchive
 alias tj='tar xjf'
 alias tz='tar xzf'
+alias tx='tar xvf'
 alias TAR='tar -zcvf' # dest source
 alias UNTAR='tar -zxvf' # source
 

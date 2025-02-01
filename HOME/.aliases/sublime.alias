@@ -1,0 +1,13 @@
+## source: https://github.com/ohmyzsh/ohmyzsh/blob/master/plugins/sublime/README.md
+
+## Sublime Text aliases
+
+# opens Sublime Text. If passed a file or directory, Sublime Text will open it.
+alias st=subl
+
+# open Sublime Text on the current directory.
+alias stt='subl .'
+
+# if sudo is available, sst will open Sublime Text with root permissions, so that you can modify any file or directory that you pass it. Useful to edit system files.
+# Define sst only if sudo exists
+(( $+commands[sudo] )) && alias sst='sudo -EH subl'

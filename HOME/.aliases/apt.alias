@@ -1,0 +1,132 @@
+## source: https://github.com/ohmyzsh/ohmyzsh/blob/master/plugins/ubuntu/README.md
+
+(( $+commands[apt] )) && APT=apt || APT=apt-get
+
+# Search the apt-cache with the specified criteria
+alias acs='apt-cache search'
+
+# Perform a regular expression apt-file search
+alias afs='apt-file search --regexp'
+
+# Fetch the source for the specified package
+alias ags="$APT source"
+
+# Display the package source priorities
+alias acp='apt-cache policy'
+
+# List the installed packages
+alias agli='apt list --installed'
+
+# List available updates only
+alias aglu='apt list --upgradable'
+
+# Shows information about the listed packages
+alias acsp='apt-cache showpkg'
+compdef _acsp acsp='apt-cache showpkg'
+
+# superuser operations ######################################################
+
+# Generates or updates the apt-file package database
+alias afu='sudo apt-file update'
+
+# Remove the specified PPA
+alias ppap='sudo ppa-purge'
+
+# Run apt-get with sudo
+alias age="sudo $APT"
+# Clears out the local repository of retrieved package files that can no longer be downloaded
+alias aga="sudo $APT autoclean"
+# Installs/Removes packages to satisfy the dependencies of a specified build pkg
+alias agb="sudo $APT build-dep"
+# Clears out the local repository of retrieved package files leaving everything from the lock files
+alias agc="sudo $APT clean"
+# Follows dselect choices for package installation
+alias agd="sudo $APT dselect-upgrade"
+# Install the specified package
+alias agi="sudo $APT install"
+# Remove a package including any configuration files
+alias agp="sudo $APT purge"
+# Remove a package
+alias agr="sudo $APT remove"
+# Update package list
+alias agu="sudo $APT update"
+# Update packages list and perform a distribution upgrade
+alias agud="sudo $APT update && sudo $APT dist-upgrade"
+# Upgrade available packages
+alias agug="sudo $APT upgrade"
+# Update packages list and upgrade available packages
+alias aguu="sudo $APT update && sudo $APT upgrade"
+# Remove automatically installed packages no longer needed
+alias agar="sudo $APT autoremove"
+
+
+# Remove ALL kernel images and headers EXCEPT the one in use
+alias kclean='sudo aptitude remove -P ?and(~i~nlinux-(ima|hea) ?not(~n`uname -r`))'
+
+# Misc. #####################################################################
+# Print all installed packages
+alias allpkgs='dpkg --get-selections | grep -v deinstall'
+
+# Create a basic .deb package
+alias mydeb='time dpkg-buildpackage -rfakeroot -us -uc'
+
+
+### Prints apt history
+# Usage:
+#   apt-history install
+#   apt-history upgrade
+#   apt-history remove
+#   apt-history rollback
+#   apt-history list
+# Based On: https://linuxcommando.blogspot.com/2008/08/how-to-show-apt-log-history.html
+function apt-history() {
+  case "$1" in
+    install)
+      zgrep --no-filename 'install ' $(ls -rt /var/log/dpkg*)
+      ;;
+    upgrade|remove)
+      zgrep --no-filename $1 $(ls -rt /var/log/dpkg*)
+      ;;
+    rollback)
+      zgrep --no-filename upgrade $(ls -rt /var/log/dpkg*) | \
+        grep "$2" -A10000000 | \
+        grep "$3" -B10000000 | \
+        awk '{print $4"="$5}'
+      ;;
+    list)
+      zgrep --no-filename '' $(ls -rt /var/log/dpkg*)
+      ;;
+    *)
+      echo "Parameters:"
+      echo " install - Lists all packages that have been installed."
+      echo " upgrade - Lists all packages that have been upgraded."
+      echo " remove - Lists all packages that have been removed."
+      echo " rollback - Lists rollback information."
+      echo " list - Lists all contains of dpkg logs."
+      ;;
+  esac
+}
+
+
+# Kernel-package building shortcut
+function kerndeb() {
+  # temporarily unset MAKEFLAGS ( '-j3' will fail )
+  MAKEFLAGS=$( print - $MAKEFLAGS | perl -pe 's/-j\s*[\d]+//g' )
+  print '$MAKEFLAGS set to '"'$MAKEFLAGS'"
+  appendage='-custom' # this shows up in $(uname -r)
+  revision=$(date +"%Y%m%d") # this shows up in the .deb file name
+
+  make-kpkg clean
+
+  time fakeroot make-kpkg --append-to-version "$appendage" --revision \
+      "$revision" kernel_image kernel_headers
+}
+
+
+# List packages by size
+function apt-list-packages {
+  dpkg-query -W --showformat='${Installed-Size} ${Package} ${Status}\n' | \
+  grep -v deinstall | \
+  sort -n | \
+  awk '{print $1" "$2}'
+}

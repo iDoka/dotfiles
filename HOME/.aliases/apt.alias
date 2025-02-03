@@ -22,7 +22,6 @@ alias aglu='apt list --upgradable'
 
 # Shows information about the listed packages
 alias acsp='apt-cache showpkg'
-compdef _acsp acsp='apt-cache showpkg'
 
 # superuser operations ######################################################
 

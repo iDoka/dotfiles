@@ -1,0 +1,27 @@
+set nohelp          # Disable the help information (CTRL+G to view the help screen).
+set softwrap        # Enable softwrap of lines.
+set suspend         # Enables CTRL+Z to suspend nano.
+set tabsize 4       # Sets tab-to-spaces size to 4.
+set tabstospaces    # Converts TAB key press to spaces.
+set constantshow    # Displays useful information e.g. line number and position in the bottom bar.
+set linenumbers     # Lines are numbered.
+set casesensitive   # Case insensitive search.
+set historylog      # Save the last 100 history searches for later use.
+set positionlog     # Saves the cursor position between editing sessions.
+#set zap             # Allows you to highlight text (CTRL+SHIFT+ARROW) and delete it with backspace.
+set autoindent      # A new line will have the same number of leading spaces as the previous one.
+#set indicator       # Displays a scroll bar on the right that shows the position and size of the current view port.
+#set minibar         # Displays file name and other information in the bottom bar. Removes top bar.
+set morespace       # Use the blank line below the titlebar as extra editing space.
+set smooth          # Use smooth scrolling as the default.
+set trimblanks      # removes unecessary end-of-line whitespace when you save a file. These are vital for coding.
+#set mouse           # allows you to position the cursor with the mouse — handy if you have a long file to get through. It can save a lot of scrolling or paging.
+
+
+
+set titlecolor white,red
+set keycolor cyan
+set functioncolor cyan
+#set numbercolor yellow
+set numbercolor brightblack
+

@@ -71,12 +71,5 @@ source ~/.shell/alacritty.bash
 source ~/.autocompletion/bat.bash
 
 
-
-
-
-
-
-
-
-
-
+# Reveal Shell in use
+echo "Running Shell from $SHELL"

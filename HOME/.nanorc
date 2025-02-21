@@ -25,3 +25,7 @@ set functioncolor cyan
 #set numbercolor yellow
 set numbercolor brightblack
 
+# cd ~
+# git clone --depth=1 https://github.com/scopatz/nanorc
+# rm nanorc/rego.nanorc nanorc/zig.nanorc
+include ~/nanorc/*.nanorc

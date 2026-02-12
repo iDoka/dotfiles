@@ -3,8 +3,8 @@
 ###########################################
 ## YT-DLP for music.yandex.ru download
 alias ya.muz='yt-dlp --add-metadata --embed-thumbnail --output "%(title)s [%(release_year)s].%(ext)s" --cookies-from-browser firefox'
-alias ya.muz.album='yt-dlp --add-metadata --embed-thumbnail --output "%(title)s [%(release_year)s].%(ext)s" --cookies-from-browser firefox' --sleep-interval 120 --socket-timeout 60 --retries 3
-alias ya.muz.list='yt-dlp --add-metadata --embed-thumbnail --output "%(title)s [%(release_year)s].%(ext)s" --cookies-from-browser firefox' --sleep-interval 120 --socket-timeout 60 --retries 3 --batch-file
+alias ya.muz.album='yt-dlp --add-metadata --embed-thumbnail --output "%(title)s [%(release_year)s].%(ext)s" --cookies-from-browser firefox --sleep-interval 120 --socket-timeout 60 --retries 3'
+alias ya.muz.list='yt-dlp --add-metadata --embed-thumbnail --output "%(title)s [%(release_year)s].%(ext)s" --cookies-from-browser firefox --sleep-interval 120 --socket-timeout 60 --retries 3 --batch-file'
 
 
 ###########################################
@@ -22,4 +22,50 @@ function ffmpeg.cut.avi() {
   ffmpeg -ss $2 -i $1 -t $3 -c:v libx264 -c:a aac -y "$(basename $1 .avi)_cut.mp4"
 }
 
+#####################
+### Extract audio ###
+#####################
 
+function ffmpeg.extract.mp3() {
+  ffmpeg -i "${1}" -vn -acodec copy "${1%.mp4}.mp3"
+}
+
+function ffmpeg.extract.m4a() {
+  ffmpeg -i "${1}" -vn -acodec copy "${1%.mp4}.m4a"
+}
+
+#####################
+### Audio to WAV  ###
+#####################
+
+function ffmpeg.m4a.to.wav() {
+  ffmpeg -i "${1}" -ar 16000 -ac 1 -c:a pcm_s16le "${1%.m4a}.wav"
+}
+
+function ffmpeg.mp3.to.wav() {
+  ffmpeg -i "${1}" -ar 16000 -ac 1 -c:a pcm_s16le "${1%.mp3}.wav"
+}
+
+function ffmpeg.ogg.to.wav() {
+  ffmpeg -i "${1}" -ar 16000 -ac 1 -c:a pcm_s16le "${1%.ogg}.wav"
+}
+
+#####################
+### Extract WAV   ###
+#####################
+
+function ffmpeg.extract.wav()) {
+  ffmpeg -i "${1}" -vn -ar 16000 -ac 1 -c:a pcm_s16le "${1%.mp4}.wav"
+}
+
+
+
+#####################
+### Image convert ###
+#####################
+
+function heic.to.jpeg() {
+  heif-convert -q 95 ${1} ${1%.HEIC}.jpeg
+}
+
+alias heic.to.jpeg.batch='for file in *.HEIC; do heif-convert -q 95 ${file} ${file%.HEIC}.jpeg; done'

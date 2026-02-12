@@ -1,0 +1,20 @@
+{
+	"color_scheme":      "Monokai.sublime-color-scheme",
+	"dark_color_scheme": "Monokai.sublime-color-scheme",
+
+	"font_face": "",
+	"font_size": 10,
+
+	"ignored_packages":
+	[
+		"Vintage",
+	],
+
+    "auto_save_session": true,
+	"index_files": false,
+	"save_on_focus_lost": false,
+	"show_encoding": true,
+	"update_check": false,
+
+	"theme": "auto",
+}

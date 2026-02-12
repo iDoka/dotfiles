@@ -1,0 +1,7 @@
+// These settings override both User and Default settings for the Jinja2 syntax
+{
+    "extensions": [
+        ".j2.html",
+        ".j2"
+    ]
+}

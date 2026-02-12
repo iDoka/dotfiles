@@ -10,7 +10,10 @@
 		"Vintage",
 	],
 
+    "hot_exit": true,
+    "remember_open_files": true,
     "auto_save_session": true,
+
 	"index_files": false,
 	"save_on_focus_lost": false,
 	"show_encoding": true,

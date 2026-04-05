@@ -35,4 +35,16 @@ fpath+=${ZDOTDIR:-~}/.zsh_functions
 
 
 
+# bun completions
+[ -s "/Users/doka/.bun/_bun" ] && source "/Users/doka/.bun/_bun"
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
+
+alias claud='claude ‑dangerously‑skip‑permissions'
+alias clauded='claude ‑dangerously‑skip‑permissions'
+alias act='source .venv/bin/activate'
+alias ifc='ifconfig | grep "inet "| cut -d" " -f2 | grep -v "127.0.0.1"'
+
 
